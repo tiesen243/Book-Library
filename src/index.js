@@ -1,7 +1,7 @@
 // Modules
 const express = require('express')
 const path = require('path')
-const { engine } = require ('express-handlebars')
+const { engine } = require('express-handlebars')
 
 // Create App
 const app = express()
@@ -24,14 +24,13 @@ app.set("views", path.join(__dirname, 'resource/views'))
 
 // Route
 app.get('/home', (req, res) => {
-    res.render('home');
+  res.render('home');
 });
 
 app.get('/news', (req, res) => {
-    res.render('news');
+  res.render('news');
 });
 
 
 app.listen(port, () => console.log(`Listening on port: ${port}`))
-
 
