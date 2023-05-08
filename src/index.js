@@ -28,7 +28,9 @@ app.engine(
     extname: '.html',
   }),
 )
-app.set('view engine', 'html')
+app.set(
+          'view engine', 
+  'html')
 app.set('views', path.join(__dirname, 'resources/views'))
 
 // Routes init
