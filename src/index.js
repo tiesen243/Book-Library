@@ -22,15 +22,8 @@ const { log } = require('console')
 app.use(morgan('combined'))
 
 // Template Engine
-app.engine(
-  'html',
-  engine({
-    extname: '.html',
-  }),
-)
-app.set(
-          'view engine', 
-  'html')
+app.engine('html', engine({ extname: '.html' }))
+app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'resources/views'))
 
 // Routes init
