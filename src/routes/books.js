@@ -7,6 +7,7 @@ router.get('/create', bookController.create)
 router.post('/store', bookController.store)
 router.get('/:id/edit', bookController.edit)
 router.put('/:id', bookController.update)
+router.delete('/:id', bookController.destroy)
 router.get('/:slug', bookController.show)
 
 module.exports = router

@@ -20,10 +20,90 @@
           >
         </td>
         <td>
-          <a href="/books/{{this._id}}" class="btn btn-68 btn-danger">Delete</a>
+          <a
+            class="btn btn-68 btn-danger"
+            type="button"
+            data-id="{{this._id}}"
+            data-title="{{this.title}}"
+            data-bs-toggle="modal"
+            data-bs-target="#delete-book-modal"
+          >
+            Delete
+          </a>
         </td>
       </tr>
       {{/each}}
     </tbody>
   </table>
 </div>
+
+<!-- Confirm before delete -->
+
+<div
+  class="modal fade"
+  id="delete-book-modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Delete this book?
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" id="noti"></div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-68 btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-68 btn-danger"
+          id="btn-delete-book"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete hidden form -->
+<form method="POST" name="delete-book-form"></form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const deleteBtn = document.querySelector('#btn-delete-book')
+    const deleteForm = document.forms['delete-book-form']
+    let bookId, bookTitle
+
+    $('#delete-book-modal').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget)
+      const id = button.data('id')
+      const title = button.data('title')
+
+      const noti = document.querySelector('#noti')
+      noti.innerHTML = `Are you sure you want to delete "<strong>${title}</strong>"?`
+
+      bookId = id
+      bookTitle = title
+    })
+
+    deleteBtn.addEventListener('click', () => {
+      deleteForm.action = `/books/${bookId}?_method=DELETE`
+      deleteForm.submit()
+    })
+  })
+</script>

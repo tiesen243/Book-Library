@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node --inspect src/index.js",
+    "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss/ -o src/public/css",
     "format": "npx prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"

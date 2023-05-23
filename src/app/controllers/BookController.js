@@ -40,6 +40,13 @@ class BookController {
       .then(() => res.redirect('/user/books'))
       .catch((err) => res.render('notFound'))
   }
+
+  // [DELETE] /books/:id -- Delete book
+  destroy(req, res, next) {
+    Book.deleteOne({ _id: req.params.id })
+      .then(() => res.redirect('back'))
+      .catch((err) => res.render('notFound'))
+  }
 }
 
 module.exports = new BookController()
