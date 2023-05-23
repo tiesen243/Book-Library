@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark bg-gradient sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Tiesen</a>
+    <a class="navbar-brand text-light fw-bold" href="/home">Book Library</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -12,57 +12,38 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
+      <ul class="navbar-nav me-auto offset-md-10">
+        <li class="nav-item dropdown ml-auto">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle text-light"
             href="#"
-            id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown
+            <img
+              src="https://scontent.fsgn19-1.fna.fbcdn.net/v/t39.30808-6/347625338_6407829462594900_5320336111868440217_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DSjI6uF3hi4AX_RHbmb&_nc_oc=AQkuVWh7iDCy6lZ7vetaaZWq4GyfqX7GoHCpqZ5C7x0QovC8kHbBHE2wghnWy9tw7SO_0uZ2NNjlYsCkNfKObesR&_nc_ht=scontent.fsgn19-1.fna&oh=00_AfAGBygZ3L-C-U1VRIIIrvY8jBJmteZx12QC3EVw4fnajg&oe=6471DBD7 "
+              alt=""
+              class="user-avt"
+            />
+            Tiesen
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+          <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="/books/create">Upload book</a>
             </li>
+            <li><hr class="dropdown-divider" /></li>
             <li>
-              <hr class="dropdown-divider" />
+              <a class="dropdown-item" href="/user/books">My uploaded books</a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
+            <li><a href="/user/blogs" class="dropdown-item">My blogs</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
-        </li>
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

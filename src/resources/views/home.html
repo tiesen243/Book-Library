@@ -1,1 +1,24 @@
-<h1>Home</h1>
+<div class="mt-4">
+  <div class="row">
+    {{#each books}}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-book-item border-2 rounded border-black">
+        <div class="header">
+          <img src="{{this.img}}" class="card-img-top" alt="..." />
+          <h5 class="card-title">{{this.title}}</h5>
+        </div>
+        <div class="card-body">
+          <b>Descipton</b>
+          <p class="card-text">{{shortDesc}}</p>
+          <button
+            class="btn-68"
+            onclick="window.location.href='/books/{{this.slug}}';"
+          >
+            See Details
+          </button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

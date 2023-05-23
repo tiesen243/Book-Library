@@ -1,8 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
 @import 'variables';
 * {
+  font-family: 'Fira Sans', sans-serif;
+}
+.container {
+  margin: 0 auto;
+  height: 86vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.title {
+  font-size: 1.5rem;
   font-weight: bold;
 }
-h1 {
-  color: rosybrown;
-  background-color: blue;
+.user-avt {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+// Card Preview
+.card-book-item {
+  margin-top: 15px;
+  width: 100%;
+  height: 95%;
+}
+
+.card-book-item .header {
+  display: inline;
+  flex-direction: column;
+  width: 90%;
+  flex: 2;
+  padding: 10px;
+}
+
+.card-book-item .header img {
+  width: 150px;
+  max-width: 215px;
+  height: 200px;
+  float: left;
+  padding-right: 10px;
+}
+
+.card-book-item .header .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.book-image {
+  width: 300px;
+  height: 430px;
+  margin-bottom: 10px;
+}
+.details .right {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin-top: -40px;
+}
+.details .right h3 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.details .right h5 {
+  margin-top: -20px;
+  font-size: 3rem;
+  font-weight: 500;
+}
+.details .right p {
+  margin-top: -20px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+// Button
+.btn-68,
+.btn-68 *,
+.btn-68 :after,
+.btn-68 :before,
+.btn-68:after,
+.btn-68:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-68 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  margin-top: 20px;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-68:disabled {
+  cursor: default;
+}
+.btn-68:-moz-focusring {
+  outline: auto;
+}
+.btn-68 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-68 [hidden] {
+  display: none;
+}
+.btn-68 {
+  box-shadow: inset 0 0 0 2px #fff;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: color 0.1s linear;
+}
+.btn-68:after,
+.btn-68:before {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+.btn-68:before {
+  border-right: var(--border);
+  border-top: var(--border);
+  left: 0;
+  top: 0;
+}
+.btn-68:hover:before {
+  --border: 4px solid #000;
+  -webkit-animation: border-top-and-right 1s forwards;
+  animation: border-top-and-right 1s forwards;
+}
+.btn-68:after {
+  border-bottom: var(--border);
+  border-left: var(--border);
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.btn-68:hover:after {
+  --border: 4px solid #000;
+  -webkit-animation: border-bottom-and-left 1s forwards;
+  animation: border-bottom-and-left 1s forwards;
+}
+@-webkit-keyframes border-top-and-right {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  50% {
+    height: 0;
+    width: 100%;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+  }
+}
+@keyframes border-top-and-right {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  50% {
+    height: 0;
+    width: 100%;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+  }
+}
+@-webkit-keyframes border-bottom-and-left {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  50% {
+    height: 0;
+    width: 100%;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+  }
+}
+@keyframes border-bottom-and-left {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  50% {
+    height: 0;
+    width: 100%;
+  }
+  to {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// Not Found Page
+.not-found {
+  display: flex;
+  flex-direction: column;
+}
+.not-found h1 {
+  font-size: 10rem;
+  font-weight: 900;
+  margin: 0;
+  color: #000;
+}
+.not-found h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+.not-found p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
 }

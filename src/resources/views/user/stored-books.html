@@ -1,0 +1,29 @@
+<div class="mt-4">
+  <h3>My uploaded books</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col" colspan="3">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each books}}
+      <tr>
+        <th scope="row">{{inceaseIndex @index 1}}</th>
+        <td>{{this.title}}</td>
+        <td>{{this.author}}</td>
+        <td>
+          <a href="/books/{{this._id}}/edit" class="btn btn-68 btn-primary"
+            >Edit</a
+          >
+        </td>
+        <td>
+          <a href="/books/{{this._id}}" class="btn btn-68 btn-danger">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

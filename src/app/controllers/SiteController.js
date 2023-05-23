@@ -1,7 +1,20 @@
-class SiteControllers {
+const Book = require('../models/Book')
+
+const {
+  mutipleMongooseToObject,
+  mongooseToObject,
+} = require('../../util/mongoose')
+
+class SiteController {
   // [GET] /home
   home(req, res) {
-    res.render('home')
+    Book.find({})
+      .then((books) => {
+        res.render('home', {
+          books: mutipleMongooseToObject(books),
+        })
+      })
+      .catch((err) => res.render('notFound'))
   }
 
   // [GET] /search
@@ -10,4 +23,4 @@ class SiteControllers {
   }
 }
 
-module.exports = new SiteControllers()
+module.exports = new SiteController()
